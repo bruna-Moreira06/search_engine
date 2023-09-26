@@ -1,0 +1,38 @@
+{% include 'scengine/layouts/main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <main class="container-fluid">
+         <h1>Usefull help articles for "{{ query }}"</h1>
+    
+    {% if results_articles %}
+        <div class="result-block article-results">
+            <p>Language: {{ language }} | Product: {{ product }}</p>
+            <ul>
+            {% for result in results_articles %}
+                <li>
+                    <details>
+                        <summary role="button">{{ result.title }}</summary>
+                        <p>
+                            <strong>Title similarity:</strong> {{ result.title_similarity }}<br>
+                            <strong>Text similarity:</strong> {{ result.text_similarity }}<br>
+                            <strong>Computed similarity:</strong> {{ result.computed_similarity }}<br>
+                            <a href="https://www.goodbarber.com/help/{{product}}/{{ slugs.0 }}/{{ result.slug }}" target="_blank">Ouvrir l'article</a>
+                        </p>
+                    </details>
+                </li>
+            {% endfor %}
+            </ul>
+            <p>Time taken for execution: {{ time }}</p>
+        </div>
+    {% else %}
+        <p>No article results found.</p>
+    {% endif %}   
+    </main>
+
+</body>
+</html>

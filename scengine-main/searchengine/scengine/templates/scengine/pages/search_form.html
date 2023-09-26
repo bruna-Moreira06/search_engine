@@ -1,0 +1,13 @@
+<!-- search_form.html -->
+{% include 'scengine/layouts/main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+</head>
+    <form class="my-form" method="post" id="chatbot-form">        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Search</button>
+    </form>

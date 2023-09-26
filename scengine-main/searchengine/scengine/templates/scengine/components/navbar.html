@@ -1,0 +1,17 @@
+
+{% load static %}
+
+<nav class="custom-navbar">
+   
+    <ul><li><a href="{% url 'home' %}"><strong>GoodBarber</strong></a></li></ul>
+
+    <ul>
+        <li><a href="{% url 'search_html' %}">Recherche Help</a></li>
+        <li><a href="{% url 'api_search' %}">Recherche Help API</a></li>
+        <li><a href="{% url 'benchmark' %}" >Benchmark</a></li>
+        <li><a href="{% url 'load_data' %}" >Load Data</a></li>
+        <li><a href="{% url 'admin:index' %}" target="_blank">Administration</a></li>
+        <li><a id="color-mode" onclick="toggleColorMode()"></a></li> 
+        
+    </ul>
+</nav>

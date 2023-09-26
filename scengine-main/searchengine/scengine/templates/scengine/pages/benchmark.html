@@ -1,0 +1,23 @@
+{% include 'scengine/layouts/main.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benchmark</title>
+</head>
+<body>
+    <main class="container">
+    <h1>Benchmark Results</h1>
+    {% for data in benchmark_data %}
+    <article>        
+        <h3>{{ data.function_name }}</h3>
+        <p>Nombre d'entrées : {{ data.num_entries }}</p>
+        <p>Temps moyen d'exécution : {{ data.avg_execution_time }}</p>
+    </article>
+
+        <hr>    
+    {% endfor %}
+    </main>
+</body>
+</html>

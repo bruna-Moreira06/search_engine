@@ -1,0 +1,32 @@
+
+{% load i18n %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "scengine/css/pico/pico.min.css" %}">
+  <script src="{% static 'scengine/script/script.js' %}" defer></script>
+  <title>GoodBarber Search Engine</title>
+  <style>
+    body{
+        box-sizing :border-box;
+        padding : 20px;
+    }
+    .result-block-h1{
+        color:red;
+    }
+  </style>
+  {% block header %}
+  {% endblock %}
+</head>
+<body box-sizing: border-box >
+    {% include 'scengine/components/navbar.html' %}
+<main class="container">
+  {% block container %}
+  {% endblock %}
+</main>
+</body>
+</html>
